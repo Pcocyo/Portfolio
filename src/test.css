@@ -1,5 +1,0 @@
-  .rotated-text {
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-    transform-origin: center; /* Optional if you want to change the rotation center */
-  }
