@@ -4,7 +4,10 @@ import Icon2 from "../../assets/Icon2.svg";
 import { animationVariant } from "./variants";
 import { useNavigationContext } from "../TextNav";
 
-const IconNav: React.FC = () => {
+interface IconNavProps{
+  className?:string
+}
+const IconNav: React.FC<IconNavProps> = ({className=''}) => {
   const {navigationContext} = useNavigationContext()
   const [navState,setNavState]= useState(navigationContext)
   const [animateKey, setAnimateKey] = useState(0);
@@ -18,16 +21,16 @@ const IconNav: React.FC = () => {
   }, [navigationContext]);
 
   return (
-    <nav className="h-[50px] flex items-center p-[14px] justify-between overflow-hidden sticky top-0">
+    <nav className={className}>
       <motion.img
         src={Icon2}
         alt="Icon"
-        className="h-[49px] cursor-pointer"
+        className="h-[39px] lg:h-[49px] cursor-pointer"
         whileHover={{ scale: 1.2 }}
       />
       <motion.h3
         key={animateKey}
-        className="text-[28px] text-[#FF2B51] cursor-pointer"
+        className="text-[21px] lg:text-[28px] text-[#F26051] cursor-pointer"
         variants={animationVariant} // Animation variants with "fadeOnChange"
         animate="animation"
         whileHover="whileHover"
